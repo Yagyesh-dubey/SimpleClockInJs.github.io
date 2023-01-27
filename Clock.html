@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background: linear-gradient(120deg,#2980b9, #8e44ad);
+        }
+        #back{
+            width:30rem;
+            height:30rem;
+            background:lightgray;
+            margin:auto;
+            margin-top:4rem;
+            border-radius: 25px;;
+        }
+        #date{
+            color:blue;
+            position:relative;
+            left:180px;
+            top:20px;
+        }
+        #date:hover{
+            color:red;
+            text-shadow:0.5px 0px 1px red;
+        }
+        #head{
+            width:29.7rem;
+            height:6rem;
+            border:2px solid red;
+            border-radius: 20px;
+            background:yellow;
+            margin-top:30%;
+        }
+        #clock{
+            font-size:30px;
+            color:red;
+            position:relative;
+            left:200px;
+
+        }
+    </style>
+</head>
+
+<body onload="clock()">
+
+    <div id="back">
+        
+        <div id="clock">CLOCK</div>
+        <hr>
+
+        <div id="head">
+    <div id="date"> </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    function inner()
+    {
+    var d=new Date();
+    var x=d.getHours();
+    var y=d.getMinutes();
+    var z=d.getSeconds();
+    if(y<10)y="0"+y;
+    if(x<10)x="0"+x;
+    if(z<10)z="0"+z;
+    document.getElementById('date').innerHTML=("<h1>"+x+":"+y+":"+z+"</h1>");
+    }
+
+    function clock()
+    {
+        setInterval(inner,1000);
+    }
+    
+</script>
+</html>
